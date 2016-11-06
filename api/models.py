@@ -1,13 +1,13 @@
 from __future__ import unicode_literals
 
-import os
-import urllib
-
-from django.core.files import File
+from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.db import models
 
 
 # Create your models here.
+from django.utils import six
+
+
 class Hospital(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
@@ -15,10 +15,20 @@ class Hospital(models.Model):
     address = models.CharField(max_length=100)
     longitude = models.DecimalField(max_digits=9, decimal_places=6)
     latitude = models.DecimalField(max_digits=9, decimal_places=6)
-    home_page = models.URLField(max_length=250)
+    home_page = models.CharField(max_length=250)
     time_from = models.TimeField(blank=True)
     time_to = models.TimeField(blank=True)
-    photo = models.ImageField(upload_to='images', blank=True, null=True)
 
     def __unicode__(self):
         return self.title
+
+
+class Doctor(models.Model) :
+    first_name = models.CharField( max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField(blank = True)
+    phone = models.CharField(blank = True, max_length=100)
+    speciality = models.CharField(max_length=100)
+    bio = models.TextField()
+
+
