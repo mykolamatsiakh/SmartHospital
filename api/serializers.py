@@ -5,7 +5,9 @@ from api.models import Hospital, Doctor
 class HospitalSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Hospital
-        fields = ('id', 'title', 'description', 'address', 'longitude', 'latitude', 'home_page', 'time_from', 'time_to')
+        fields = [
+            'id', 'title', 'description', 'address', 'longitude', 'latitude', 'home_page', 'time_from', 'time_to','image'
+            ]
 
 
 class DoctorSerializer(serializers.HyperlinkedModelSerializer):

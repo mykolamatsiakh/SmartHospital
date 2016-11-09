@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from api import views
 from rest_framework import routers
+from django.conf.urls.static import static
+from api import views
 
 router = routers.DefaultRouter()
 router.register(r'hospital', views.HospitalView)
@@ -26,3 +27,4 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include(router.urls)),
 ]
+
