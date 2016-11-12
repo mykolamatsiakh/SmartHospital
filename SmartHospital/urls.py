@@ -27,5 +27,6 @@ router.register(r'patient', views.PatientView)
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include(router.urls)),
+
 ]
 
