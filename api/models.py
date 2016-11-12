@@ -31,3 +31,12 @@ class Doctor(models.Model):
     bio = models.TextField()
 
 
+class Patient(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField(blank=True)
+    phone = models.CharField(blank=True, max_length=100)
+
+
+
+

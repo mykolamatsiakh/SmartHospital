@@ -22,6 +22,7 @@ from api import views
 router = routers.DefaultRouter()
 router.register(r'hospital', views.HospitalView)
 router.register(r'doctor', views.DoctorView)
+router.register(r'patient', views.PatientView)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

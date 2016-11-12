@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import Hospital, Doctor
+from api.models import Hospital, Doctor, Patient
 
 
 class HospitalSerializer(serializers.HyperlinkedModelSerializer):
@@ -14,3 +14,10 @@ class DoctorSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Doctor
         fields = ('id', 'bio', 'first_name', 'last_name', 'email', 'phone', 'speciality')
+
+
+class PatientSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Patient
+        fields = ('id', 'bio', 'first_name', 'last_name', 'email', 'phone')
+
